@@ -1,0 +1,54 @@
+RewriteEngine On
+#backend
+RewriteRule ^administrator$ index.php?area=Admin&controller=Login
+
+#trang-chu
+RewriteRule ^home$ index.php
+#danh muc tin tuc
+RewriteRule ^products/category/(.*)/(.*)$ index.php?controller=ProductCategory&id=$1
+#chi tiet tin tuc
+RewriteRule ^products/detail/(.*)/(.*)/(.*)$ index.php?controller=ProductDetail&id=$1&cate=$2
+#
+RewriteRule ^category$ index.php?controller=ProductCategory
+#blog category
+RewriteRule ^blogs$ index.php?controller=BlogCategory
+
+#blog view
+RewriteRule ^blog/detail/(.*)/(.*)$  index.php?controller=BlogDetail&id=$1
+#login
+RewriteRule ^login$  index.php?controller=Login
+
+#register
+RewriteRule ^register$ index.php?controller=RegisterLogin&action=add
+
+#logout
+RewriteRule ^logout$ index.php?controller=Logout
+
+#cate
+RewriteRule ^cart$ index.php?controller=Cart
+
+#about
+RewriteRule ^about$ index.php?controller=About
+
+#contact
+RewriteRule ^contact$ index.php?controller=Contact
+
+#Account
+RewriteRule ^account$ index.php?controller=Account
+
+
+#Điều khoản chính sách
+RewriteRule ^TermsConditions$ index.php?controller=TermsConditions
+
+
+#xóa giỏ hàng
+RewriteRule ^destroycart$    index.php?controller=Cart&action=destroy
+
+#chuyển thanh toán
+RewriteRule ^pay$    index.php?controller=Cart&action=checkOut
+
+#admin login
+#RewriteRule ^admin$ index.php?area=Admin&controller=Login
+
+#admin login success
+#RewriteRule ^admin/success$ index.php?area=Admin
